@@ -23,7 +23,7 @@ chose = input('If yes type [Y], to no type [N]: ').upper()
 if chose != 'Y' and 'N':
     print(f'Error this {chose} is NOT valid!')
 
-while chose != 'Y':
+while chose == 'N':
 
     email = input(f'Please {name} put your e-mail here: ')
     sleep(0.3)
@@ -62,28 +62,26 @@ print(f'{name} is this your username: {username}?')
 
 option = input('If it is type [Y], if it is not type [N]').upper()
 
-while option != 'N':
+while option == 'N':
+    username = input(f'{name}, please write your username here: ')
+    sleep(0.3)
 
-    print(f'{name} your username: {username} was successfully validate!')
+    print(f'{name} is this your username: {username}?')
 
-    if option == '' or len(option) <= 0 or option == ' ' or option != str:
-        print(f'Error your option: {option} is NOT valid')
+    option = input('If it is type [Y], if it is not type [N]').upper()
 
-print(f'Ok {name} now we have some information about you: ')
+while option == 'Y':
+    print(f'Nice {name}! Now we have some information about you:')
 
-print(f'Your name:{name}')
+    print(f'Your name: {name}')
 
-print(f'Your email:{email}')
+    print(f'Your email: {email}')
 
-print(f'And your username:{username}')
+    print(f'And your username: {username}')
 
-print('Now we just need to know how old are you')
-
-age = int(input(f'How old are you {name}: '))
-
-while age <= 0 or age >= 100 or age != int:
-    print('Error your age can NOT be equal or less than 0, equal or more than 100 and different of a number')
+    print('Now we just need to know how old are you')
 
     age = int(input(f'How old are you {name}: '))
+    break
 
-print(f'{name} ar you {age} years old ?')
+print(f'{name} are you {age} years old ?')
