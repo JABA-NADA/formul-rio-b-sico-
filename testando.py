@@ -80,8 +80,8 @@ while option == 'Y':
     print(f'And your username: {username}')
 
     print('Now we just need to know how old are you')
-
-    age = int(input(f'How old are you {name}: '))
     break
+
+age = int(input(f'How old are you {name}: '))
 
 print(f'{name} are you {age} years old ?')
