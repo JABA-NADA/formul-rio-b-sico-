@@ -15,8 +15,8 @@ def detecta_erro_name_for(nome):
     for word in nome.split():
         for letra in word:
             if letra.lower() not in "abcdefghijhlmnopqrstuvwxyz":
-                return f'Error the name: {nome} is NOT valid!'
-    return f"Your name {nome} was validate"
+                return 'Error'
+    return "validate"
 
 
 detecta_dentro = detecta_erro_name_for(name)
@@ -50,12 +50,6 @@ while "Error" in detecta_dentro:
     return "acerto"
 '''
 
-while name == '' or name == ' ' or len(name) <= 1:
-    print(f'Error the name: {name} is NOT valid!')
-
-    name = input('What is your name please?: ').capitalize()
-    sleep(0.3)
-
 email = input(f'Please {name} put your e-mail here: ')
 sleep(0.3)
 
@@ -70,7 +64,7 @@ sleep(0.3)
 
 chose = input('If yes type [Y], to no type [N]: ').upper()
 
-while chose != 'Y' and 'N':
+while chose != 'Y' and chose != 'N':
     print(f'Error this {chose} is NOT valid!')
 
     print(f'{name} does your email have this domain: {domain}, and this name: {owner}?')
@@ -78,9 +72,17 @@ while chose != 'Y' and 'N':
 
     chose = input('If yes type [Y], to no type [N]: ').upper()
 
-    if chose == 'Y':
-        print(f'Nice {name}, the e-mail: {email} was validate')
-        sleep(0.5)
+while chose == 'N':
+    email = input(f'Please {name} put your e-mail here: ')
+    sleep(0.3)
+
+    print(f'{name} does your email have this domain: {domain}, and this name: {owner}?')
+    sleep(0.3)
+    chose = input('If yes type [Y], to no type [N]: ').upper()
+
+if chose == 'Y':
+    print(f'Nice {name}, the e-mail: {email} was validate')
+    sleep(0.5)
 
 print('Now you will create an username for you!')
 sleep(0.4)
@@ -109,16 +111,42 @@ while option == 'N':
 
 while option == 'Y':
     print(f'Nice {name}! Now we have some information about you:')
+    sleep(0.5)
 
     print(f'Your name: {name}')
+    sleep(0.5)
 
     print(f'Your email: {email}')
+    sleep(0.5)
 
     print(f'And your username: {username}')
+    sleep(0.4)
 
-    print('Now we just need to know how old are you')
+    print('Now we just need to know how old are you!')
+    sleep(0.4)
     break
 
 age = int(input(f'How old are you {name}: '))
+sleep(0.4)
 
-print(f'{name} are you {age} years old ?')
+option1 = input(f'{name} are you {age} years old  [Y]/[N]?').upper()
+sleep(0.4)
+
+while option1 == 'N':
+    int(input(f'How old are you {name}: '))
+    sleep(0.4)
+
+    input(f'{name} are you {age} years old  [Y]/[N]?').upper()
+    sleep(0.4)
+
+    if option1 != 'N' and option1 != 'Y':
+        print(f'Error your option is NOT valid')
+
+        age = int(input(f'How old are you {name}?: '))
+        sleep(0.4)
+
+        option1 = input(f'{name} are you {age} years old  [Y]/[N]?:').upper()
+        sleep(0.4)
+
+print('Your registration in this site was successfully completed!')
+print(':D')
