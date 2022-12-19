@@ -14,7 +14,7 @@ sleep(0.3)
 def detecta_erro_name_for(nome):
     for word in nome.split():
         for letra in word:
-            if letra.lower() not in "abcdefghijhlmnopqrstuvwxyz":
+            if letra.lower() not in "abcdefghijhlmnopqrstuvwxyzç´~^":
                 return 'Error'
     return "validate"
 
